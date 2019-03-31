@@ -13,6 +13,7 @@ module.exports = class Led extends Thing{
 
   onSwitchOn(callback){
     this.onChange(function(state){
+       // console.log(state.active);
       if(state.active == 1){
         callback();
       }
@@ -21,6 +22,7 @@ module.exports = class Led extends Thing{
 
   onSwitchOff(callback){
     this.onChange(function(state){
+       // console.log(state.active);
       if(state.active == 0){
         callback();
       }
