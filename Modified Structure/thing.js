@@ -52,7 +52,7 @@ module.exports = class Thing{
       // console.log(stateObject.state);
     //  console.log("stateObj in delta",stateObject.state);
       // console.log( "stateboject.state is ",stateObject.state);
-      self.ack();  // this is done to indicate that an actioned was done and the desired state is reached now
+      // self.ack();  // this is done to indicate that an actioned was done and the desired state is reached now
       // console.log(stateObject.state);
     });
   }
@@ -93,7 +93,7 @@ module.exports = class Thing{
     if(stateObject.state.delta != undefined){  // if delta is defined then there was a change
        // console.log(stateObject.state);
        self.state = Object.assign(self.state, stateObject.state.desired); // copy the delta/desired to state vatiable
-       self.ack();
+      //  self.ack();
       callback(stateObject.state.delta); // we render the delta parts as state variable here contains
                                         // the three parts opposed to only delta part in .on(delta) function
     }
